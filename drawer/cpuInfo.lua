@@ -28,6 +28,11 @@ local capi = { screen = screen , client = client ,
 
 local module = {}
 
+-- I added the next 2 lines
+--I see why he commented them out now. too much overhead :(
+--util.spawn("/bin/bash -c 'while true;do "..util.getdir("config") .."/Scripts/cpuInfo2.sh > /tmp/cpuStatistic.lua && sleep 5;done'")
+--util.spawn("/bin/bash -c 'while true; do "..util.getdir("config") .."/Scripts/topCpu3.sh > /tmp/topCpu.lua;sleep 5;done'")
+
 local function match_icon(arr,name)
     for k2,v2 in ipairs(arr) do
         if k2:find(name) ~= nil then
