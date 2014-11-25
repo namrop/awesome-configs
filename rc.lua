@@ -93,7 +93,7 @@ beautiful.init(config.themePath                .. "/themeSciFi.lua")
 -- beautiful.init(awful.util.getdir("config").."/blind/arrow/themeSciFi.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
+terminal = "terminator"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -745,6 +745,9 @@ client.connect_signal("manage", function (c, startup)
     end
 
     local titlebars_enabled = true
+    if c.class == "Conky" then
+         titlebars_enabled = false
+    end
 --     print(c.type)
     if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
         -- Widgets that are aligned to the left
