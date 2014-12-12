@@ -103,9 +103,10 @@ beautiful.init(config.themePath                .. "/themeHolo.lua")
 
 -- This is used later as the default terminal and editor to run.
 local titlebars_enabled = beautiful.titlebar_enabled == nil and true or beautiful.titlebar_enabled
-terminal                = "urxvtc"
+terminal                = "terminator"
 editor                  = os.getenv("EDITOR") or "nano"
 editor_cmd              = terminal .. " -e " .. editor
+
 
 -- Default modkey.
 modkey = "Mod4"
@@ -469,6 +470,11 @@ client.connect_signal("manage", function (c, startup)
         awful.placement.no_offscreen(c)
     end
 
+    local titlebars_enabled = true
+    if c.class == "Conky" then
+         titlebars_enabled = false
+    end
+--     print(c.type)
     if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
         widgets.titlebar(c)
     end
@@ -556,4 +562,6 @@ require("radical.impl.taglist.extensions").add("Count",function(client)
     return w
 end)
 
+
 -- require("wirefu.demo.notification")
+

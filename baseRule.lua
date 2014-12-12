@@ -77,7 +77,7 @@ tyrannical.tags = {
         index       = 1,
         max_clients = five_layout,
         class       = {
-            "xterm" , "urxvt" , "aterm","URxvt","XTerm"
+            "xterm" , "urxvt" , "aterm","URxvt","XTerm", "Terminator"
         },
     } ,
     {
@@ -95,6 +95,16 @@ tyrannical.tags = {
         }
     } ,
     {
+        name = "Develop",
+     init        = true                                              ,
+        exclusive   = true                                           ,
+--                     screen      = {config.scr.pri, config.scr.sec}     ,
+        icon        = utils.tools.invertedIconPath("bug.png")        ,
+        layout      = awful.layout.suit.max                          ,
+        class ={ 
+            "Kate",   "KDevelop", "Subl3", "Codeblocks", "Code::Blocks" , "DDD", "kate4"             }
+    } ,
+    {
         name = "Files",
         init        = true                                           ,
         exclusive   = true                                           ,
@@ -108,16 +118,6 @@ tyrannical.tags = {
         shortcut    = { {modkey} , "e" },
         class  = { 
             "Thunar"        , "Konqueror"      , "Dolphin"   , "ark"          , "Nautilus",         }
-    } ,
-    {
-        name = "Develop",
-     init        = true                                              ,
-        exclusive   = true                                           ,
---                     screen      = {config.scr.pri, config.scr.sec}     ,
-        icon        = utils.tools.invertedIconPath("bug.png")        ,
-        layout      = awful.layout.suit.max                          ,
-        class ={ 
-            "Kate"          , "KDevelop"       , "Codeblocks", "Code::Blocks" , "DDD", "kate4"             }
     } ,
     {
         name = "Edit",
@@ -359,7 +359,7 @@ tyrannical.properties.intrusive = {
     "feh"           , "Gradient editor", "About KDE" , "Paste Special", "Background color",
     "kcolorchooser" , "plasmoidviewer" , "plasmaengineexplorer" , "Xephyr" , "kruler"     ,
     "yakuake"       ,
-    "sflphone-client-kde", "sflphone-client-gnome", "xev",
+    "sflphone-client-kde", "sflphone-client-gnome", "Conky", "xev",
 }
 tyrannical.properties.floating = {
     "MPlayer"      , "pinentry"        , "ksnapshot"  , "pinentry"     , "gtksu"          ,
@@ -382,6 +382,11 @@ tyrannical.properties.focusable = {
 tyrannical.properties.no_autofocus = {
     "Conky"
 }
+
+tyrannical.properties.sticky = {
+    "Conky"
+}
+
 
 tyrannical.properties.below = {
     "Conky"

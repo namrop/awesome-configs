@@ -48,10 +48,14 @@ local tabWdgRow = {
     SWAP=2
 }
 
--- util.spawn("/bin/bash -c 'while true;do "..util.getdir("config") .."/Scripts/memStatistics.sh > /tmp/memStatistics.lua && sleep 5;done'")
--- util.spawn("/bin/bash -c 'while true; do "..util.getdir("config") .."/Scripts/topMem2.sh > /tmp/topMem.lua;sleep 5;done'")
+-- I uncommented the next 2 lines. I see why he commented these lines out now. too much overhead :(
+
+--util.spawn("/bin/bash -c 'while true;do "..util.getdir("config") .."/Scripts/memStatistics.sh > /tmp/memStatistics.lua && sleep 5;done'")
+--util.spawn("/bin/bash -c 'while true; do "..util.getdir("config") .."/Scripts/topMem2.sh > /tmp/topMem.lua;sleep 5;done'")
   
 local function refreshStat()
+    os.execute("/bin/bash -c '"..util.getdir("config") .."/Scripts/memStatistics.sh > /tmp/memStatistics.lua'")
+    os.execute("/bin/bash -c '"..util.getdir("config") .."/Scripts/topMem2.sh > /tmp/topMem.lua'")
     local f = io.open('/tmp/memStatistics.lua','r')
     if f ~= nil then
       local text3 = f:read("*all")
