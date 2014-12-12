@@ -4,6 +4,7 @@ local widgets      = require( "widgets"                    )
 local alttab       = require( "radical.impl.alttab"        )
 local customButton = require( "customButton"               )
 local customMenu   = require( "customMenu"                 )
+local menubar      = require( "menubar"                    )
 
 
 shorter.Navigation = {
