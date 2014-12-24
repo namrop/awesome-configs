@@ -78,7 +78,7 @@ end
 local function new(args)
   local args = args or {}
   local ib = wibox.widget.base.empty_widget()
-  bat_name = args.name or "BAT0"
+  bat_name = args.name or "BAT1"
   if check_present(bat_name) then
 
     -- Check try to load the full energy value

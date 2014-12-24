@@ -117,7 +117,7 @@ tyrannical.tags = {
         rotate_shortcut = true,
         shortcut    = { {modkey} , "e" },
         class  = { 
-            "Thunar"        , "Konqueror"      , "Dolphin"   , "ark"          , "Nautilus",         }
+            "Thunar"        , "Konqueror"      , "Dolphin"   , "ark"          , "Nautilus", "spacefm"        }
     } ,
     {
         name = "Edit",
@@ -136,7 +136,7 @@ tyrannical.tags = {
         icon        = utils.tools.invertedIconPath("media.png")      ,
         layout      = awful.layout.suit.max                          ,
         class = { 
-            "Xine"          , "xine Panel"     , "xine*"     , "MPlayer"      , "GMPlayer",
+            "Xine"          , "xine Panel"     , "xine*"     , "MPlayer"      , "GMPlayer", "Steam",
             "XMMS" }
     } ,
     {
